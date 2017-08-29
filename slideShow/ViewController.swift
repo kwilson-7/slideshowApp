@@ -8,8 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class homeScreenVC: UIViewController {
 
+//View Controllers are "SlideVC" for all Slides
+//instructionsVC for How to use
+   
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
