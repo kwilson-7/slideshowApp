@@ -8,13 +8,10 @@
 
 import UIKit
 
-class homeScreenVC: UIViewController {
+class ViewController: UIViewController {
 
 //View Controllers are "SlideVC" for all Slides
 //instructionsVC for How to use
-   
-    
-    
     
     
     override func viewDidLoad() {

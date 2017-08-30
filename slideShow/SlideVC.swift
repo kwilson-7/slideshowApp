@@ -16,11 +16,25 @@ class SlideVC: UIViewController {
     @IBOutlet weak var textToBeShown: UILabel!
     
     
+    var labels = [String]()
+    var index = 0
+    
+    
     
     @IBAction func forwardPressed(_ sender: Any) {
+        index += 1
+        if index >= labels.count {
+            index = 0
+        }
+        updateLabel()
     }
     
     @IBAction func backPressed(_ sender: Any) {
+        index -= 1
+        if index < 0 {
+            index = labels.count-1
+        }
+        updateLabel()
     }
     
     
@@ -37,6 +51,10 @@ class SlideVC: UIViewController {
         displayText.isHidden = true
     }
     
+    func updateLabel() {
+        textToBeShown.text = labels[index]
+    }
+    
     
     
     
@@ -44,6 +62,8 @@ class SlideVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        labels = ["UPSL", "WNFC", "Western", "Nevada", "FC", "Soccer", "Family", "Love"]
     }
 
     override func didReceiveMemoryWarning() {
