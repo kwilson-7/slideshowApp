@@ -15,8 +15,10 @@ class SlideVC: UIViewController {
     @IBOutlet weak var closeText: UIButton!
     @IBOutlet weak var textToBeShown: UILabel!
     
+    @IBOutlet weak var imageView: UIImageView!
     
     var labels = [String]()
+    var images = [String]()
     var index = 0
     
     
@@ -43,16 +45,21 @@ class SlideVC: UIViewController {
         closeText.isHidden = true
         textToBeShown.isHidden = true
         displayText.isHidden = false
+        imageView.isHidden = false
     }
 
     @IBAction func displayTextPressed(_ sender: Any) {
         closeText.isHidden = false
         textToBeShown.isHidden = false
         displayText.isHidden = true
+        imageView.isHidden = true
     }
+    
+    
     
     func updateLabel() {
         textToBeShown.text = labels[index]
+        imageView.image = UIImage(named: images[index])
     }
     
     
@@ -63,7 +70,10 @@ class SlideVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        labels = ["UPSL", "WNFC", "Western", "Nevada", "FC", "Soccer", "Family", "Love"]
+        labels = ["UPSL", "WNFC", "Western"]//, "Nevada", "FC", "Soccer", "Family", "Love"]
+        images = ["cookies", "hand", "pancakes"]
+        
+        updateLabel()
     }
 
     override func didReceiveMemoryWarning() {
